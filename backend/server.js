@@ -9,6 +9,7 @@ const orderRoutes = require('./routes/orders');
 const adminRoutes = require('./routes/admin');
 const managerRoutes = require('./routes/manager');
 const driverRoutes = require('./routes/driver');
+const seedDefaultData = require('./utils/seedData');
 
 const app = express();
 app.use(cors());
@@ -23,6 +24,8 @@ app.use('/api/orders', orderRoutes);
 app.use('/api/admin', adminRoutes);
 app.use('/api/manager', managerRoutes);
 app.use('/api/driver', driverRoutes);
+
+seedDefaultData();
 
 app.use((req, res) => {
   res.status(404).json({ message: 'Endpoint олдсонгүй' });
