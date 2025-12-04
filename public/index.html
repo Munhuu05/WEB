@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Автомашин түрээс</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="top-bar">
+    <div class="brand">Автомашин түрээс</div>
+    <nav>
+      <a href="#cars">Машин хайх</a>
+      <a href="#orders">Захиалга</a>
+      <a href="#driver">Хүргэлт</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div>
+      <p class="eyebrow">Аюулгүй, хурдан, онлайн</p>
+      <h1>MN - Car Rental</h1>
+      <p>Захиалгаа онлайнаар өгөх, төлбөрөө баталгаажуулах, хүргэлтийн явцыг хянах боломжтой.</p>
+      <button id="loginButton">Нэвтрэх</button>
+    </div>
+    <img src="https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=800&q=80" alt="Car" />
+  </section>
+
+  <section class="panel" id="auth">
+    <h2>Нэвтрэх / Бүртгүүлэх</h2>
+    <form id="loginForm" class="form-grid">
+      <input type="email" id="email" placeholder="Имэйл" required />
+      <input type="password" id="password" placeholder="Нууц үг" required />
+      <button type="submit">Нэвтрэх</button>
+      <button type="button" id="registerBtn" class="secondary">Бүртгүүлэх</button>
+    </form>
+    <p id="authStatus" class="muted"></p>
+  </section>
+
+  <section class="panel" id="cars">
+    <h2>Машин хайх</h2>
+    <div class="form-grid">
+      <input type="text" id="filterCategory" placeholder="Ангилал ID" />
+      <input type="number" id="filterMinPrice" placeholder="Доод үнэ" />
+      <input type="number" id="filterMaxPrice" placeholder="Дээд үнэ" />
+      <select id="filterFuel">
+        <option value="">Түлш</option>
+        <option value="electric">Цахилгаан</option>
+        <option value="petrol">Бензин</option>
+        <option value="diesel">Дизель</option>
+      </select>
+      <input type="number" id="filterPower" placeholder="Хүч (hp)" />
+      <button id="searchCars">Хайх</button>
+    </div>
+    <div id="carList" class="cards"></div>
+  </section>
+
+  <section class="panel" id="orders">
+    <h2>Шинэ захиалга</h2>
+    <form id="orderForm" class="form-grid">
+      <input type="number" id="orderCar" placeholder="Машины ID" required />
+      <input type="date" id="startDate" required />
+      <input type="date" id="endDate" required />
+      <input type="text" id="paymentMethod" placeholder="Төлбөрийн төрөл" required />
+      <textarea id="orderNotes" placeholder="Тэмдэглэл"></textarea>
+      <button type="submit">Захиалга үүсгэх</button>
+    </form>
+    <div class="status" id="orderStatus"></div>
+  </section>
+
+  <section class="panel" id="driver">
+    <h2>Хүргэлтийн явц</h2>
+    <p class="muted">Жолооч нэвтэрсэн тохиолдолд хүргэх даалгаврууд энд харагдана.</p>
+    <div id="driverOrders" class="cards"></div>
+  </section>
+
+  <footer class="footer">
+    <p>Үйлчилгээ: Админ, Менежер, Хэрэглэгч, Жолоочийн ялгаатай эрх бүхий REST API.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
